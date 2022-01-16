@@ -11,9 +11,12 @@ class sidebar extends Component
      *
      * @return void
      */
-    public function __construct()
+    public $name,$age;
+    public function __construct($name,$age)
     {
         //
+        $this->name=$name;
+        $this->age=$age;
     }
 
     /**
