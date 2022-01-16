@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/test/{id}', function ($id) {
+//     echo $id;
+//     return view('first');
+// });
+Route::get('user_home', 'App\Http\Controllers\User@index');
+Route::get('home', 'App\Http\Controllers\User@index');
+
+Route::view('test','first');
+Route::get('about', 'App\Http\Controllers\User@about');
+Route::get('service', 'App\Http\Controllers\User@service');
