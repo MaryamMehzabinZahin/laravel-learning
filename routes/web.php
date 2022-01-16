@@ -23,8 +23,9 @@ Route::get('/', function () {
 // });
 Route::get('user_home', 'App\Http\Controllers\User@index');
 Route::get('home', 'App\Http\Controllers\User@index');
-
+Route::post('formsubmit','App\Http\Controllers\Form@index');
 Route::view('page','page');
 Route::view('page2','page2');
+Route::view('my_form','form');
 Route::get('about', 'App\Http\Controllers\User@about');
 Route::get('service', 'App\Http\Controllers\User@service');
