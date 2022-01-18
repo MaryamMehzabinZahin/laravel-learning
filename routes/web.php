@@ -33,4 +33,4 @@ Route::get('service', 'App\Http\Controllers\User@service');
 //     return view('web',array('data'=>array('vishal','amit')));
 // });
 Route::view('denied','denied');
-Route::view('news','news');
+Route::view('news','news')->middleware('UserCheck');
