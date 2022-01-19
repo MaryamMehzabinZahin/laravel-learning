@@ -33,4 +33,11 @@ Route::get('service', 'App\Http\Controllers\User@service');
 //     return view('web',array('data'=>array('vishal','amit')));
 // });
 Route::view('denied','denied');
-Route::view('news','news')->middleware('UserCheck');
+Route::get('session_set','App\Http\Controllers\User@session_set');
+Route::get('session_get','App\Http\Controllers\User@session_get');
+Route::get('session_remove','App\Http\Controllers\User@session_remove');
+Route::group(['middleware'=>['UserCheck']],function()
+{
+    Route::view('news','news');
+});
+ 
