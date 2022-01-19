@@ -15,8 +15,17 @@ class User extends Controller
     {
         return view('user.header').view('user.about').view('user.footer');
     }
-    function service()
+    function session_set(Request $r)
     {
-        return view('user.header').view('user.service').view('user.footer');
+        $r->session()->put('name','vishal');
+    }
+    function session_get(Request $r)
+    {
+        echo $r->session()->get('name');
+    }
+    function session_remove(Request $r)
+    {
+        echo $r->session()->forget('name');
     }
 }
+

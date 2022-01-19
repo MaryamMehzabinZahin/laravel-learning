@@ -9,6 +9,10 @@ class Form extends Controller
     //
     function index(Request $request)
     {
-        return $request->post('name');
+        
+        // $request->validate([
+        //     'doc'=>'required'
+        // ]);
+        echo $request->file('doc')->store('media');
     }
 }
