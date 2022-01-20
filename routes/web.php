@@ -27,8 +27,7 @@ Route::post('formsubmit','App\Http\Controllers\Form@index');
 Route::view('page','page');
 Route::view('page2','page2');
 Route::view('my_form','form');
-Route::get('about', 'App\Http\Controllers\User@about');
-Route::get('service', 'App\Http\Controllers\User@service');
+
 // Route::get('/web',function(){
 //     return view('web',array('data'=>array('vishal','amit')));
 // });
@@ -40,4 +39,14 @@ Route::group(['middleware'=>['UserCheck']],function()
 {
     Route::view('news','news');
 });
- 
+Route::view('login','login');
+Route::post('usersubmit','App\Http\Controllers\User@usersubmit');
+Route::get('/logout',function() {
+    session()->forget('name');
+    session()->flash('error','logout');
+    return redirect('login');
+});
+Route::group(['middleware'=>['UserAuth']],function()
+{
+    Route::get('about', 'App\Http\Controllers\User@about');
+});
