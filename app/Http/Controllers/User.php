@@ -14,6 +14,7 @@ class User extends Controller
     function about()
     {
         return view('user.header').view('user.about').view('user.footer');
+        
     }
     function session_set(Request $r)
     {
@@ -23,9 +24,19 @@ class User extends Controller
     {
         echo $r->session()->get('name');
     }
-    function session_remove(Request $r)
+    function usersubmit(Request $r)
     {
-        echo $r->session()->forget('name');
+        $r->validate([
+            'email'=>'required|email',
+            'pass'=>'required'
+        ]);
+
+        $email=$r->input('email');
+        $pass=$r->input('pass');
+        if($email=='a@gmail.com' && $pass=='123')
+        {
+            $r->session()->put('name','vi');
+        }
     }
 }
 
