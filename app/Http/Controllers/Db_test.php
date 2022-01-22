@@ -10,10 +10,26 @@ class Db_test extends Controller
     //
     function select()
     {
-       // $result= DB::table('user')->count();
+        return $result= DB::table('user')->count();
       //  $result= DB::table('user')->sum('id');
-      $result= DB::table('user')->avg('id');
-        echo '<pre>';
-        print_r($result);
+        
+    }
+     function insert()
+    {
+         DB::table('user')->insert(
+            array('id'=>'926','name'=>'jtsh','email'=>'jh@gmail.com')
+        );
+        
+    }
+
+    function update()
+    {
+         DB::table('user')->where('id',1)->update(
+            array('name'=>'jussssm','email'=>'jsssh@gmail.com')
+        );
+    }
+    function delete()
+    {
+        DB::table('user')->where('id',1)->delete();
     }
 }
