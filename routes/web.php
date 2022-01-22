@@ -50,3 +50,6 @@ Route::group(['middleware'=>['UserAuth']],function()
 {
     Route::get('about', 'App\Http\Controllers\User@about');
 });
+
+
+Route::get('select','Db_test@select');
