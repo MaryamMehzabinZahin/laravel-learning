@@ -52,4 +52,4 @@ Route::group(['middleware'=>['UserAuth']],function()
 });
 
 
-Route::get('select','Db_test@select');
+Route::get('select','App\Http\Controllers\Db_test@select');
