@@ -53,3 +53,6 @@ Route::group(['middleware'=>['UserAuth']],function()
 
 
 Route::get('select','App\Http\Controllers\Db_test@select');
+Route::get('insert','App\Http\Controllers\Db_test@insert');
+Route::get('update','App\Http\Controllers\Db_test@update');
+Route::get('delete','App\Http\Controllers\Db_test@delete');
