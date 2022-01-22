@@ -9,8 +9,11 @@ class UserProfile extends Controller
     function index()
     {
       // return Profile::max('id');
-      $res=Profile::find(1);
-      $res->delete();
+      $res=new Profile;
+      $res->name="poly";
+      $res->email="pli@gmail.com";
+      $res->save();
+      
       return Profile::all();
      
     }
